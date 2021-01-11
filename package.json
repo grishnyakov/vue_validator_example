@@ -1,0 +1,63 @@
+{
+  "name": "vue_example",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Sergei Grishniakov",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --progress --config webpack/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "node webpack/build.js",
+    "test": "npx cypress open"
+  },
+  "dependencies": {
+    "@mdi/font": "^5.8.55",
+    "babel-polyfill": "^6.26.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vuetify": "^2.3.21",
+    "vuetify-loader": "^1.6.0",
+    "vuex": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^6.3.2",
+    "css-loader": "^3.6.0",
+    "cypress": "^6.1.0",
+    "deepmerge": "^4.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-vuetify": "^0.6.1",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vuetify": "^1.0.0-beta.7",
+    "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^0.11.3",
+    "node-notifier": "^8.0.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "ora": "^5.1.0",
+    "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "semver": "^7.3.4",
+    "shelljs": "^0.8.4",
+    "terser-webpack-plugin": "^4.2.3",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.5",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=12.14.1",
+    "npm": ">=6.13.1"
+  }
+}
