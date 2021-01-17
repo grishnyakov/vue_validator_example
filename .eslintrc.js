@@ -7,7 +7,6 @@ module.exports = {
     extends: [
         "eslint:recommended",
         "plugin:vue/essential",
-        "vuetify"
     ],
     globals: {
         "Atomics": "readonly",
@@ -18,13 +17,11 @@ module.exports = {
         "sourceType": "module"
     },
     plugins: [
-        "vuetify",
         "cypress"
     ],
     rules: {
         "no-console": "off",
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
-        "vuetify/no-deprecated-classes": "error"
     }
 };

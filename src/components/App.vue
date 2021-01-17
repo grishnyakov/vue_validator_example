@@ -1,37 +1,22 @@
 <template>
-  <v-app>
-    <validator
-      ref="root"
-      :num="1"
-    >
-      <some-component>
-        <validator :num="2" />
-      </some-component>
-      <some-component>
-        <validator :num="3" />
-        <validator :num="4" />
-      </some-component>
-      <validator :num="5" />
-
-      <validator :num="6">
-        <!-- Убедимся, что 6 валидирует 7 -->
-        <validator :num="7" />
-      </validator>
-    </validator>
-  </v-app>
+  <users />
 </template>
 
 <script>
-  import Validator from "./Validator";
-  import Body from "./Body";
+import Users from "./users/Users";
 
-  export default {
-    components: {
-      Validator,
-      "some-component": Body,
-    },
-    mounted () {
-      this.$refs.root.validate();
-    },
-  };
+export default {
+  components: {
+    Users,
+  },
+};
 </script>
+
+<style>
+.float-right {
+  float: right;
+}
+.text-right {
+  text-align: right;
+}
+</style>

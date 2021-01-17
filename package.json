@@ -13,10 +13,10 @@
   "dependencies": {
     "@mdi/font": "^5.8.55",
     "babel-polyfill": "^6.26.0",
+    "fuzzy-search": "^3.2.1",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
-    "vuetify": "^2.3.21",
-    "vuetify-loader": "^1.6.0",
+    "vue-virtual-scroller": "^1.0.10",
     "vuex": "^3.6.0"
   },
   "devDependencies": {
@@ -28,10 +28,8 @@
     "cypress": "^6.1.0",
     "deepmerge": "^4.2.2",
     "eslint": "^6.8.0",
-    "eslint-config-vuetify": "^0.6.1",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-vue": "^6.2.2",
-    "eslint-plugin-vuetify": "^1.0.0-beta.7",
     "file-loader": "^6.2.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^4.5.0",
@@ -55,9 +53,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.5.0"
-  },
-  "engines": {
-    "node": ">=12.14.1",
-    "npm": ">=6.13.1"
   }
 }

@@ -3,10 +3,7 @@ const path = require("path");
 const utils = require("./utils");
 const config = require("./config");
 
-const isProduction = process.env.NODE_ENV === "production";
-
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -21,7 +18,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new VuetifyLoaderPlugin(),
 
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -31,11 +27,8 @@ module.exports = {
     }),
   ],
   output: {
-    path: config.build.assetsRoot,
     filename: "[name].js",
-    publicPath: process.env.NODE_ENV === "production"
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath,
+    publicPath: config.dev.assetsPublicPath,
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],
@@ -50,9 +43,7 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
         options: {
-          cssSourceMap: isProduction
-          ? config.build.productionSourceMap
-          : config.dev.cssSourceMap,
+          cssSourceMap: config.dev.cssSourceMap,
           cacheBusting: config.dev.cacheBusting,
           transformToRequire: {
             video: ["src", "poster"],
