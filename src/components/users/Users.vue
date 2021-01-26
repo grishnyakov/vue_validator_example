@@ -1,19 +1,38 @@
 <template>
+  <span>Это первый блок
+    <input v-model="user.age" type="text">
+    {{doubleValue}}
+    
+     </span>
+ 
   <div class="users">
     <user-filter />
-    <users-list />
+    <!-- <users-list /> -->
   </div>
 </template>
 
 <script>
-import UsersList from "./UsersList";
-import UserFilter from "./UserFilter";
+// import UsersList from "./UsersList";
+ import UserFilter from "./UserFilter";
 
 export default {
   components: {
-    UsersList,
+    // UsersList,
     UserFilter,
   },
+  data(){
+    return {
+      user: { }
+    }
+  },
+  computed: {
+    doubleValue(){
+      return this.user?.test?.age * 2
+    }
+  },
+  created(){
+    // this.user.age = 77
+  }
 };
 </script>
 

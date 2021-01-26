@@ -1,10 +1,7 @@
-"use strict";
 const path = require("path");
 const config = require("./config");
 
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
-
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const {VueLoaderPlugin} = require("vue-loader");
 
 function assetsPath (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === "production"
@@ -25,52 +22,32 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: assetsPath("css/[name]_x.css"),
-      chunkFilename: assetsPath("css/[id]_x.css"),
-    }),
   ],
   output: {
     filename: "[name].js",
     publicPath: config.dev.assetsPublicPath,
   },
   resolve: {
-    extensions: [".js", ".vue", ".json"],
-    alias: {
-      vue$: "vue/dist/vue.esm.js",
-      "@": resolve("src"),
-    },
+    extensions: ['.ts', ".js", ".vue", ".json"],
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: "vue-loader",
-        options: {
-          cssSourceMap: config.dev.cssSourceMap,
-          cacheBusting: config.dev.cacheBusting,
-          transformToRequire: {
-            video: ["src", "poster"],
-            source: "src",
-            img: "src",
-            image: "xlink:href",
-          },
-        },
       },
       {
         test: /\.m?js$/,
         include: [
           resolve("src"),
-          resolve("node_modules/resize-detector"),
         ],
         // exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: [    
+              ["@babel/preset-env"],    
+            ],
           },
         },
       },

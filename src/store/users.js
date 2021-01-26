@@ -1,6 +1,5 @@
 import USER_LIST from "./generated";
 
-import Vue from "vue";
 import FuzzySearch from "fuzzy-search"; // Or: var FuzzySearch = require('fuzzy-search');
 
 
@@ -13,7 +12,8 @@ export default {
     },
     mutations: {
         setUserProp (state, { index, value }) {
-            Vue.set(state.list, index, Object.assign({}, state.list[index], value));
+           // Vue.set(state.list, index, Object.assign({}, state.list[index], value));
+           state.list[index] = Object.assign({}, state.list[index], value);
         },
         searchName (state, text) {
             state.searchName = text;

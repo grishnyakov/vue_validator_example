@@ -1,11 +1,5 @@
-import Vue from "vue";
-import store from "./tools/store.js";
+import { createApp } from 'vue'
+import store from "./store";
 import App from "./components/App";
 
-
-export default new Vue({
-  el: "#app",
-  components: { App },
-  store,
-  template: "<App/>",
-});
+export default createApp(App).use(store).mount("#app");
