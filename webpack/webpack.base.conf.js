@@ -1,11 +1,18 @@
 "use strict";
 const path = require("path");
-const utils = require("./utils");
 const config = require("./config");
 
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+function assetsPath (_path) {
+  const assetsSubDirectory = process.env.NODE_ENV === "production"
+    ? config.build.assetsSubDirectory
+    : config.dev.assetsSubDirectory;
+
+  return path.posix.join(assetsSubDirectory, _path);
+}
 
 function resolve (dir) {
   return path.join(__dirname, "..", dir);
@@ -22,8 +29,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: utils.assetsPath("css/[name]_x.css"),
-      chunkFilename: utils.assetsPath("css/[id]_x.css"),
+      filename: assetsPath("css/[name]_x.css"),
+      chunkFilename: assetsPath("css/[id]_x.css"),
     }),
   ],
   output: {
@@ -72,7 +79,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("images/[name].[hash:7].[ext]"),
+          name: assetsPath("images/[name].[hash:7].[ext]"),
         },
       },
       {
@@ -80,7 +87,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("fonts/[name].[hash:7].[ext]"),
+          name: assetsPath("fonts/[name].[hash:7].[ext]"),
         },
       },
     ],
