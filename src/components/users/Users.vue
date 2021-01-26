@@ -1,23 +1,23 @@
 <template>
   <span>Это первый блок
-    <input v-model="user.age" type="text">
+    <input v-model="user.test.age" type="text">
     {{doubleValue}}
     
      </span>
  
   <div class="users">
     <user-filter />
-    <!-- <users-list /> -->
+    <users-list />
   </div>
 </template>
 
 <script>
-// import UsersList from "./UsersList";
+import UsersList from "./UsersList";
  import UserFilter from "./UserFilter";
 
 export default {
   components: {
-    // UsersList,
+    UsersList,
     UserFilter,
   },
   data(){
@@ -31,7 +31,7 @@ export default {
     }
   },
   created(){
-    // this.user.age = 77
+    this.user.test = {age: 77}
   }
 };
 </script>

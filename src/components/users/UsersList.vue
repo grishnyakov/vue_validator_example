@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
-import { RecycleScroller } from "vue-virtual-scroller";
+import 'vue3-virtual-scroller/dist/vue3-virtual-scroller.css'
+import { RecycleScroller } from "vue3-virtual-scroller";
 import UserColor from "./UserColor";
 
 export default {
