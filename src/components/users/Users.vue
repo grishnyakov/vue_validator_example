@@ -1,11 +1,6 @@
 <template>
-  <span>Это первый блок
-    <input v-model="user.test.age" type="text">
-    {{doubleValue}}
-    
-     </span>
- 
   <div class="users">
+    <user-add />
     <user-filter />
     <users-list />
   </div>
@@ -13,26 +8,15 @@
 
 <script>
 import UsersList from "./UsersList";
- import UserFilter from "./UserFilter";
+import UserFilter from "./UserFilter";
+import UserAdd from "./add/UserAdd";
 
 export default {
   components: {
     UsersList,
     UserFilter,
+    UserAdd,
   },
-  data(){
-    return {
-      user: { }
-    }
-  },
-  computed: {
-    doubleValue(){
-      return this.user?.test?.age * 2
-    }
-  },
-  created(){
-    this.user.test = {age: 77}
-  }
 };
 </script>
 
@@ -44,12 +28,10 @@ $toolbarHeight: 50px;
   width: 100%;
   max-width: 400px;
   border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
 
   & {
-    .scroller {
-      height: calc(100% - (#{$toolbarHeight})); // border'ы не учитываю
-    }
-
     .filter {
       height: $toolbarHeight;
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="filter">
     <div>
-      <input v-model="searchName" type="text" class="search" placeholder="Поиск" />
+      <input :value="searchName" @change="searchName=$event.target.value" type="text" class="search" placeholder="Поиск" />
     </div>
     <div class="text-right float-right">
      
@@ -58,7 +58,7 @@ input {
   height: 20px;
 }
 .filter {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   width: 100%;
   display: flex;
   justify-content: space-between;

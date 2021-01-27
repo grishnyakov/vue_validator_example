@@ -2,7 +2,7 @@
   <RecycleScroller
     class="scroller"
     :items="filteredItems"
-    :item-size="30"
+    :item-size="32"
     key-field="index"
     v-slot="{ item }"
   >
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 .user {
-  height: 30px;
+  height: 32px;
   padding: 0 12px;
   display: flex;
   align-items: center;

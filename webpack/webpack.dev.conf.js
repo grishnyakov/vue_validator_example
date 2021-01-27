@@ -98,4 +98,10 @@ module.exports = merge(baseWebpackConfig, {
       },
     }),
   ],
+  resolve: {
+    extensions: [".ts", ".js", ".vue", ".json"],
+    alias: {                
+      vue: "vue/dist/vue.esm-bundler.js"
+    }
+  } 
 });

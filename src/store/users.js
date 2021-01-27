@@ -1,7 +1,6 @@
 import USER_LIST from "./generated";
 
-import FuzzySearch from "fuzzy-search"; // Or: var FuzzySearch = require('fuzzy-search');
-
+import FuzzySearch from "fuzzy-search"; 
 
 export default {
     namespaced: true,
